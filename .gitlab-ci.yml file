@@ -1,0 +1,18 @@
+stages:
+  - build
+  - test
+
+build_job:
+  stage: build
+  image: python:3.11
+
+  script:
+    - echo "Running Hospital Management App..."
+    - python Hospital_app.py
+
+test_job:
+  stage: test
+  image: python:3.11
+  script:
+  - pip install pytest
+  - pytest -v
